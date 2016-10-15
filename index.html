@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>360导航</title>
+    <link rel="stylesheet" href="css/new.css">
+</head>
+<body>
+    <div class="fullpage" id="fullpage">
+        <!--第一屏-->
+        <section class="section">
+            <!--logo-->
+            <div class="logo"></div>
+            <!--文字部分-->
+            <div class="txt">
+                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <!--特征-->
+            <div class="feature"></div>
+        </section>
+        <!--第二屏-->
+        <section class="section">
+            <!--盾牌-->
+            <div class="shield">
+                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <!--介绍-->
+            <div class="intro"></div>
+        </section>
+        <!--第三屏-->
+        <section class="section">
+            <!--介绍-->
+            <div class="intro"></div>
+            <!--圆环-->
+            <div class="circle">
+                <span></span><span></span><span></span>
+            </div>
+            <!--火箭-->
+            <div class="rocket"></div>
+        </section>
+        <!--第四屏-->
+        <section class="section">
+            <!--搜索-->
+            <div class="search">
+                <!--关键字-->
+                <span class="key"></span>
+                <!--搜索结果-->
+                <div class="wrap">
+                    <div class="tips"></div>
+                </div>
+            </div>
+            <!--介绍-->
+            <div class="intro"></div>
+        </section>
+        <!--第五屏-->
+        <section class="section">
+            <div class="intro"></div>
+            <div class="browser">
+                <!--背景-->
+                <div class="bg"></div>
+                <!--工具栏-->
+                <div class="swrap">
+                    <span></span>
+                </div>
+                <!--边框线-->
+                <div class="line"></div>
+                <div class="leftside border"></div>
+                <div class="topside border"></div>
+                <div class="rightside border"></div>
+                <div class="bottomside border"></div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.fullPage.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#fullpage").fullpage({
+            css3:true,
+            afterLoad: function (anchorLink,index) {
+                $(".section").removeClass("current");
+                setTimeout(function () {
+                    $(".section").eq(index-1).addClass("current");
+                },100)
+            }
+        })
+    })
+</script>
